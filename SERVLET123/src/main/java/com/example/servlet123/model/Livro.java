@@ -8,10 +8,10 @@ public class Livro {
     private String titulo;
     private String autor;
     private String isbn;
-    private Date ano_publicacao;
+    private int ano_publicacao;
     private boolean disponivel;
 
-    public Livro(int id, String titulo, String autor, String isbn, Date ano_publicacao, boolean disponivel) {
+    public Livro(int id, String titulo, String autor, String isbn, int ano_publicacao, boolean disponivel) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -48,11 +48,11 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public Date getAno_publicacao() {
+    public int getAno_publicacao() {
         return ano_publicacao;
     }
 
-    public void setAno_publicacao(Date ano_publicacao) {
+    public void setAno_publicacao(int ano_publicacao) {
         this.ano_publicacao = ano_publicacao;
     }
 
