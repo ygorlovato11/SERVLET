@@ -2,7 +2,6 @@ package com.example.servlet123.DAO;
 
 import com.example.servlet123.conexaoBD.Conexao;
 import com.example.servlet123.model.Emprestimo;
-import com.example.servlet123.model.Livro;
 
 import java.sql.*;
 import java.util.ArrayList;
