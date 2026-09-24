@@ -27,8 +27,16 @@ public class Conexao {
         return conn;
     }
 
-    public static void desconectar(Connection conn) throws SQLException{
-        conn.close();
+    public static void desconectar(Connection conn){
+        try{
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+
+                System.out.println("desconecatado");
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
     }
 
 
