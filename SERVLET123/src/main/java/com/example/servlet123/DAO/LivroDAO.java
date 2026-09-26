@@ -60,13 +60,15 @@ public class LivroDAO {
         try{
             conn = conexao.conectar();
 
-            PreparedStatement pstmt = conn.prepareStatement("UPDATE livro set titulo = ?, autor = ?, isbn = ?, ano_publicacao =?, disponivel=? WHERE id_admin = ? ");
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE livro set titulo = ?, autor = ?, isbn = ?, ano_publicacao =?, disponivel=? WHERE id = ? ");
 
             pstmt.setString(1, livro.getTitulo());
             pstmt.setString(2, livro.getAutor());
             pstmt.setString(3, livro.getIsbn());
             pstmt.setInt(4,livro.getAno_publicacao());
             pstmt.setBoolean(5, livro.isDisponivel());
+            pstmt.setInt(6, livro.getId());
+
             if (pstmt.executeUpdate() > 0){
                 return 0;
             }

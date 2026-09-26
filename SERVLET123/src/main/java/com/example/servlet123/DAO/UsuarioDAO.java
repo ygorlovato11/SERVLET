@@ -68,12 +68,13 @@ public class UsuarioDAO {
 
         try {
             conn = conexao.conectar();
-            PreparedStatement pstmt = conn.prepareStatement("UPDATE usuario set usuario_id = ?, livro_id = ?, data_emprestimo = ?, data_devolucao_prevista=?, status=? where id=?");
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE usuario set nome = ?, email = ?, senha = ?, tipo =? where id=?");
 
             pstmt.setString(1, usuario.getNome());
             pstmt.setString(2, usuario.getEmail());
             pstmt.setString(3, usuario.getSenha());
             pstmt.setString(4, usuario.getTipo());
+            pstmt.setInt(5, usuario.getId());
 
             if (pstmt.executeUpdate() > 0){
                 return 0;
@@ -93,7 +94,7 @@ public class UsuarioDAO {
         try {
             conn = conexao.conectar();
 
-            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM usuario set nome= ?, email = ?, senha = ?, tipo = ?");
+            PreparedStatement pstmt = conn.prepareStatement("DELETE FROM usuario where id = ?");
 
             pstmt.setInt(1, idUsuario);
 
