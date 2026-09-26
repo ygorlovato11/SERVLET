@@ -19,7 +19,7 @@ public class Conexao {
             String pswrd = dotenv.get("DB_PASSWORD");
             String url = dotenv.get("DB_URL");
 
-            conn = DriverManager.getConnection(user,pswrd,url);
+            conn = DriverManager.getConnection(url,user,pswrd);
             System.out.println("Conexxao realizada");
         } catch (SQLException | ClassNotFoundException  e) {
             System.out.println("Erro: " + e);

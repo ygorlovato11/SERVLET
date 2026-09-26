@@ -11,6 +11,7 @@ package com.example.servlet123.Servlet;
 
 import java.io.*;
 
+import com.example.servlet123.conexaoBD.Conexao;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -19,19 +20,22 @@ public class Servlet extends HttpServlet {
     private String message;
 
     public void init() {
-        message = "Ygor";
+        message = "Ygor🆖🆖🆖🆖🆖" +
+                "Scott";
     }
+    Conexao conexao = new Conexao();
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
-
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String action = request.getServletPath(); //direciona para a paginaInicio, pois
+        System.out.println(action); // action vale /paginaInicio
+        if(action.equals("/paginaInicio")){
+            Contatos(request,response);
+        }
     }
-
+    //Listar contatos
+    public void Contatos(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.sendRedirect("pagina.jsp"); //direciona pra pagina do jsp
+    }
 
 
 
@@ -67,4 +71,17 @@ public class Servlet extends HttpServlet {
 //        outFile.println("SIGMA BOY🫡🫡😶‍🌫️😶‍🌫️😶‍🌫️💣💣🗿🗿😎");
 //
 //        outFile.println("</body>");
+//    }
+
+
+//----------------------------------------------------------------------------------------------------
+//    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        response.setContentType("text/html");
+//
+//        // Hello
+//        PrintWriter out = response.getWriter();
+//        out.println("<html><body>");
+//        out.println("<p>" + "THIAGO ESPARRINHA LENTO JULIANO GASPART" + "</p>");
+//        out.println("<h1>" + message + "</h1>");
+//        out.println("</body></html>");
 //    }
