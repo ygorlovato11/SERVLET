@@ -3,21 +3,50 @@ body{
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
+    background-color: black;
 }
 h1{
-    color: blue;
+    color: gold;
 }
 .Botao1{
     text-decoration: none;
-    background-color: darkblue;
+    background-color: white;
     padding: 5px 10px 5px 10px;
-    color: cadetblue;
+    color: darkgoldenrod;
     font-size: 1.2em;
     font-weight: 700;
     border-radius: 5px;
+    border: 2px solid gold;
+    cursor: pointer;
+    border-color: gold;
+    width: 300px;
+    margin-bottom: 10px;
 }
 
 .adicionar{
     border-radius: 5px;
-    background-color: gray;
+    background-color: darkgoldenrod;
+    border: 0;
+    cursor: pointer;
+    color: black;
+}
+
+#tabela{
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+
+#tabela th{
+    border: 3px solid g;
+    padding: 10px;
+    text-align: left;
+    background-color: black;
+    color: gold;
+}
+
+#tabela td{
+    border: 3px solid gold;
+    padding: 10px;
+    color: white;
 }

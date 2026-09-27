@@ -20,6 +20,10 @@ public class Livro {
         this.disponivel = disponivel;
     }
 
+    public Livro() {
+        super();
+    }
+
     public int getId() {
         return id;
     }
